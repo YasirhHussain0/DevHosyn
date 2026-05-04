@@ -37,9 +37,15 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-slide-up">
+<<<<<<< HEAD
           <span className="dark:text-white text-navy-900">Yasir</span>{' '}
           <span className="bg-gradient-to-r from-cyan-neon via-accent-purple to-accent-pink bg-clip-text text-transparent bg-300% animate-gradient-shift">
             Hussain
+=======
+          <span className="dark:text-white text-navy-900">Alex</span>{' '}
+          <span className="bg-gradient-to-r from-cyan-neon via-accent-purple to-accent-pink bg-clip-text text-transparent bg-300% animate-gradient-shift">
+            Carter
+>>>>>>> bedb7bb5242c2f985d03dbb614bee4927a61044f
           </span>
         </h1>
 
