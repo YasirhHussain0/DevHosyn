@@ -9,7 +9,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden">
-      <div className="absolute inset-0 dark:bg-navy-900 bg-white border-t dark:border-white/5 border-gray-100" />
+      <div className="absolute inset-0 dark:bg-navy-900 bg-slate-50 border-t dark:border-white/5 border-gray-200" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-10 mb-10">

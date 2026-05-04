@@ -63,7 +63,6 @@ export default function Projects() {
     return () => clearInterval(timer);
   }, [slide]);
 
-  // Build a 3-card window from the circular list
   const getVisible = () => {
     const visible = [];
     for (let i = 0; i < 3; i++) {
@@ -77,7 +76,7 @@ export default function Projects() {
   return (
     <section id="projects" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-800 bg-gray-50" />
-      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-accent-purple/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] dark:bg-accent-purple/5 bg-accent-purple/10 rounded-full blur-3xl" />
 
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto px-6">
         <div
@@ -132,12 +131,12 @@ export default function Projects() {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t dark:from-navy-900/80 from-white/80 to-transparent" />
                   <div className="absolute top-3 right-3 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <button className="w-8 h-8 rounded-lg dark:bg-white/10 bg-navy-900/10 backdrop-blur-sm flex items-center justify-center dark:text-white text-white hover:bg-cyan-neon/20 transition-colors">
+                    <button className="w-8 h-8 rounded-lg dark:bg-white/10 bg-white/80 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:bg-cyan-neon/20 transition-colors">
                       <Github className="w-4 h-4" />
                     </button>
-                    <button className="w-8 h-8 rounded-lg dark:bg-white/10 bg-navy-900/10 backdrop-blur-sm flex items-center justify-center dark:text-white text-white hover:bg-cyan-neon/20 transition-colors">
+                    <button className="w-8 h-8 rounded-lg dark:bg-white/10 bg-white/80 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:bg-cyan-neon/20 transition-colors">
                       <ExternalLink className="w-4 h-4" />
                     </button>
                   </div>

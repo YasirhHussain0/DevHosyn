@@ -13,7 +13,7 @@ export default function About() {
   return (
     <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-900 bg-white" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-neon/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] dark:bg-cyan-neon/5 bg-cyan-neon/10 rounded-full blur-3xl" />
 
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto px-6">
         <div className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

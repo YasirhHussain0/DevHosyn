@@ -1,11 +1,11 @@
 import { useInView } from '../hooks/useInView';
 
 const skills = [
-  { name: 'JavaScript', level: 92, color: 'from-amber-400 to-amber-500' },
-  { name: 'React', level: 88, color: 'from-cyan-neon to-blue-400' },
-  { name: 'UI/UX Design', level: 85, color: 'from-accent-purple to-accent-pink' },
-  { name: 'Motion Design', level: 78, color: 'from-accent-orange to-accent-pink' },
-  { name: 'Tailwind CSS', level: 95, color: 'from-teal-400 to-cyan-neon' },
+  { name: 'JavaScript', level: 92, color: 'from-amber-400 to-amber-500', stroke: 'text-amber-400' },
+  { name: 'React', level: 88, color: 'from-cyan-neon to-blue-400', stroke: 'text-cyan-400' },
+  { name: 'UI/UX Design', level: 85, color: 'from-accent-purple to-accent-pink', stroke: 'text-purple-400' },
+  { name: 'Motion Design', level: 78, color: 'from-accent-orange to-accent-pink', stroke: 'text-orange-400' },
+  { name: 'Tailwind CSS', level: 95, color: 'from-teal-400 to-cyan-neon', stroke: 'text-teal-400' },
 ];
 
 export default function Skills() {
@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <section id="skills" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-800 bg-gray-50" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-cyan-neon/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] dark:bg-cyan-neon/5 bg-cyan-neon/10 rounded-full blur-3xl" />
 
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -46,7 +46,6 @@ export default function Skills() {
                     transitionDelay: `${400 + i * 150}ms`,
                   }}
                 >
-                  {/* Glow effect */}
                   <div className="absolute inset-0 rounded-full opacity-50 blur-sm bg-gradient-to-r from-white/40 to-transparent" />
                 </div>
               </div>
@@ -76,7 +75,7 @@ export default function Skills() {
                     <circle
                       cx="40" cy="40" r="36"
                       fill="none"
-                      className={`stroke-current ${skill.color.includes('amber') ? 'text-amber-400' : skill.color.includes('cyan') ? 'text-cyan-400' : skill.color.includes('purple') ? 'text-purple-400' : skill.color.includes('orange') ? 'text-orange-400' : 'text-teal-400'}`}
+                      className={`stroke-current ${skill.stroke}`}
                       strokeWidth="4"
                       strokeLinecap="round"
                       strokeDasharray={circumference}

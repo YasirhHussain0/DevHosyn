@@ -22,7 +22,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-900 bg-white" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-purple/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] dark:bg-accent-purple/5 bg-accent-purple/10 rounded-full blur-3xl" />
 
       <div ref={ref} className="relative z-10 max-w-5xl mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>

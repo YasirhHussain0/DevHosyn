@@ -46,7 +46,7 @@ export default function Services() {
   return (
     <section id="services" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-900 bg-white" />
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent-pink/5 rounded-full blur-3xl -translate-y-1/2" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] dark:bg-accent-pink/5 bg-accent-pink/10 rounded-full blur-3xl -translate-y-1/2" />
 
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto px-6">
         <div
@@ -67,7 +67,7 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`group relative rounded-2xl dark:bg-white/5 bg-white border dark:border-white/10 border-gray-200 p-6 overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-neon/5 hover:border-cyan-neon/30 ${
+              className={`group relative rounded-2xl dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 p-6 overflow-hidden transition-all duration-500 hover:scale-[1.03] hover:shadow-xl hover:shadow-cyan-neon/5 hover:border-cyan-neon/30 ${
                 isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${200 + i * 100}ms` }}

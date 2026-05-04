@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ThemeProvider>
-      <div className="dark transition-colors duration-500">
+      <div className="transition-colors duration-500">
         <Navbar />
         <Hero />
         <About />
