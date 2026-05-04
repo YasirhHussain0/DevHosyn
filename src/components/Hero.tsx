@@ -37,9 +37,9 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-6 animate-slide-up">
-          <span className="dark:text-white text-navy-900">Dev</span>{' '}
+          <span className="dark:text-white text-navy-900">Alex</span>{' '}
           <span className="bg-gradient-to-r from-cyan-neon via-accent-purple to-accent-pink bg-clip-text text-transparent bg-300% animate-gradient-shift">
-            Yasir
+            Carter
           </span>
         </h1>
 
