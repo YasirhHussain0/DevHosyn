@@ -44,9 +44,9 @@ export default function Contact() {
 
             <div className="space-y-4">
               {[
-                { icon: Mail, label: 'alex@example.com' },
-                { icon: Phone, label: '+1 (555) 123-4567' },
-                { icon: MapPin, label: 'San Francisco, CA' },
+                { icon: Mail, label: 'yasirhosyn@gmail.com' },
+                { icon: Phone, label: '+92 (555) 123-4567' },
+                { icon: MapPin, label: 'ABC, Pakistan' },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4 group">
                   <div className="w-10 h-10 rounded-xl dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center group-hover:border-cyan-neon/30 transition-colors duration-300">
