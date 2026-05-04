@@ -6,7 +6,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated gradient background */}
       <div className="absolute inset-0 dark:bg-gradient-to-br dark:from-navy-900 dark:via-navy-800 dark:to-navy-900 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50" />
 
