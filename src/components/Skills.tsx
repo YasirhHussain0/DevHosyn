@@ -1,11 +1,12 @@
 import { useInView } from '../hooks/useInView';
 
 const skills = [
-  { name: 'JavaScript', level: 92, color: 'from-amber-400 to-amber-500', stroke: 'text-amber-400' },
-  { name: 'React', level: 88, color: 'from-cyan-neon to-blue-400', stroke: 'text-cyan-400' },
-  { name: 'UI/UX Design', level: 85, color: 'from-accent-purple to-accent-pink', stroke: 'text-purple-400' },
-  { name: 'Motion Design', level: 78, color: 'from-accent-orange to-accent-pink', stroke: 'text-orange-400' },
-  { name: 'Tailwind CSS', level: 95, color: 'from-teal-400 to-cyan-neon', stroke: 'text-teal-400' },
+  { name: 'WordPress', level: 95, color: 'from-amber-400 to-amber-500', stroke: 'text-amber-400' },
+  { name: 'PHP', level: 88, color: 'from-cyan-neon to-blue-400', stroke: 'text-cyan-400' },
+  { name: 'Custom Theme', level: 90, color: 'from-accent-purple to-accent-pink', stroke: 'text-purple-400' },
+  { name: 'WooCommerce', level: 85, color: 'from-accent-orange to-accent-pink', stroke: 'text-orange-400' },
+  { name: 'JavaScript', level: 82, color: 'from-teal-400 to-cyan-neon', stroke: 'text-teal-400' },
+  { name: 'Performance Optimization', level: 87, color: 'from-indigo-400 to-purple-500', stroke: 'text-indigo-400' },
 ];
 
 export default function Skills() {
@@ -54,7 +55,7 @@ export default function Skills() {
         </div>
 
         {/* Circular progress indicators */}
-        <div className="mt-16 grid grid-cols-5 gap-4">
+        <div className="mt-16 grid grid-cols-6 gap-4">
           {skills.map((skill, i) => {
             const circumference = 2 * Math.PI * 36;
             const offset = circumference - (skill.level / 100) * circumference;

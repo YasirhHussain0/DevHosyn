@@ -1,5 +1,5 @@
 import { useInView } from '../hooks/useInView';
-import { Code2, Palette, Smartphone, Globe, Zap, Layers } from 'lucide-react';
+import { Code2, Palette, Zap, Paintbrush, ShoppingBag, Wrench } from 'lucide-react';
 
 const services = [
   {
@@ -10,20 +10,21 @@ const services = [
   },
   {
     icon: Palette,
-    title: 'UI/UX Design',
-    description: 'Crafting intuitive interfaces with user-centered design principles and delightful micro-interactions.',
+    title: 'UI Integration',
+    description: 'Translating Figma designs into pixel-perfect, responsive, and interactive web interfaces.',
     gradient: 'from-accent-purple to-accent-pink',
   },
   {
-    icon: Smartphone,
-    title: 'Mobile Development',
-    description: 'Cross-platform mobile apps with native feel, smooth animations, and responsive layouts.',
+    icon: ShoppingBag,
+    // icon: Cart,
+    title: 'E-commerce Solutions',
+    description: 'Developing conversion-focused online stores with seamless checkout and optimized user flow.',
     gradient: 'from-accent-orange to-accent-pink',
   },
   {
-    icon: Globe,
-    title: 'Full-Stack Solutions',
-    description: 'End-to-end product development from database design to deployment and DevOps pipelines.',
+    icon: Paintbrush,
+    title: 'Theme Customization',
+    description: 'Tailoring WordPress themes to match your brand with custom layouts, styling, and enhanced functionality.',
     gradient: 'from-teal-400 to-cyan-neon',
   },
   {
@@ -33,9 +34,9 @@ const services = [
     gradient: 'from-amber-400 to-accent-orange',
   },
   {
-    icon: Layers,
-    title: 'Design Systems',
-    description: 'Building reusable component libraries and design tokens for consistent, maintainable UIs.',
+    icon: Wrench,
+    title: 'Maintenance & Support',
+    description: 'Providing ongoing updates, security enhancements, and reliable technical support for websites.',
     gradient: 'from-accent-purple to-cyan-neon',
   },
 ];
