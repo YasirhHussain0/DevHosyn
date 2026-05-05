@@ -39,7 +39,7 @@ export default function Footer() {
           </div>
 
           {/* Right: Contact info + socials */}
-          <div className="flex flex-col items-start gap-6">
+          <div className="flex flex-col items-start sm:items-end gap-6">
             <h4 className="dark:text-gray-300 text-gay-600 font-semibold text-xl"> Contacts</h4>
             <div className="flex flex-col gap-3">
               <a href="mailto:yasirhosyn@gmail.com" className="flex items-center gap-3 dark:text-gray-300 text-gray-600 hover:text-cyan-500 transition-colors">

@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
       <div className="mx-auto max-w-7xl px-6 py-4">
-        <div className="flex items-center justify-between rounded-2xl bg-navy-900/60 dark:bg-navy-900/60 bg-white/60 px-6 py-3 backdrop-blur-xl border border-white/10 dark:border-white/10 border-gray-200/50 shadow-[-2px_4px_16px_rgba(0,0,0,0.2)]">
+        <div className="flex items-center justify-between rounded-2xl bg-navy-900/60 dark:bg-navy-900/60 bg-white/60 px-6 py-3 backdrop-blur-xl border border-white/10 dark:border-white/10 border-gray-200/50">
           <button onClick={() => scrollTo('hero')} className="text-xl font-bold tracking-tight">
             <span className="bg-gradient-to-r from-cyan-neon to-accent-purple bg-clip-text text-transparent">
               YH
