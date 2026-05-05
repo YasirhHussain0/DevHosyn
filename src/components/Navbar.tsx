@@ -29,7 +29,7 @@ export default function Navbar() {
               <button
                 key={link}
                 onClick={() => scrollTo(link)}
-                className="text-sm font-medium dark:text-gray-300 text-gray-600 hover:text-cyan-neon dark:hover:text-cyan-neon transition-colors duration-300"
+                className="text-sm font-medium dark:text-gray-300 text-gray-600 hover:text-cyan-neon dark:hover:text-cyan-neon hover:text-cyan-600 transition-colors duration-300"
               >
                 {link}
               </button>
@@ -49,7 +49,7 @@ export default function Navbar() {
                   }`}
                 />
                 <Moon
-                  className={`absolute inset-0 h-5 w-5 text-cyan-neon transition-all duration-500 ${
+                  className={`absolute inset-0 h-5 w-5 dark:text-cyan-neon text-cyan-600 transition-all duration-500 ${
                     isDark ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
                   }`}
                 />

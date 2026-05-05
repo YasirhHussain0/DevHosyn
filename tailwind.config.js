@@ -14,6 +14,7 @@ export default {
         cyan: {
           neon: '#00F5FF',
           glow: '#00F5FF33',
+          600: '#0891B2',
         },
         accent: {
           purple: '#A855F7',

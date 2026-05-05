@@ -18,7 +18,7 @@ export default function Skills() {
 
       <div ref={ref} className="relative z-10 max-w-4xl mx-auto px-6">
         <div className={`text-center mb-16 transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-sm font-semibold tracking-widest uppercase text-cyan-neon mb-3">Expertise</p>
+          <p className="text-sm font-semibold tracking-widest uppercase dark:text-cyan-neon text-cyan-600 mb-3">Expertise</p>
           <h2 className="text-3xl sm:text-5xl font-bold dark:text-white text-navy-900">
             Skills &{' '}
             <span className="bg-gradient-to-r from-cyan-neon to-accent-purple bg-clip-text text-transparent">

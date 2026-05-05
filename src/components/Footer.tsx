@@ -44,13 +44,13 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a href="mailto:yasirhosyn@gmail.com" className="flex items-center gap-3 dark:text-gray-300 text-gray-600 hover:text-cyan-500 transition-colors">
                 <div className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center">
-                  <Mail className="w-4 h-4 text-cyan-neon hover:text-cyan-500" />
+                  <Mail className="w-4 h-4 dark:text-cyan-neon text-cyan-600 hover:text-cyan-500" />
                 </div>
                 <span className="text-sm hover:text-cyan-500">yasirhosyn@gmail.com</span>
               </a>
               <a href="tel:+15551234567" className="flex items-center gap-3 dark:text-gray-300 text-gray-600 hover:text-cyan-500 transition-colors">
                 <div className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center">
-                  <Phone className="w-4 h-4 text-cyan-neon hover:text-cyan-500" />
+                  <Phone className="w-4 h-4 dark:text-cyan-neon text-cyan-600 hover:text-cyan-500" />
                 </div>
                 <span className="text-sm hover:text-cyan-500">+92 (555) 123-4567</span>
               </a>

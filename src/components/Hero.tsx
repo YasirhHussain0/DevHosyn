@@ -32,7 +32,7 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-white/5 bg-navy-900/5 border dark:border-white/10 border-navy-900/10 backdrop-blur-sm mb-8 animate-fade-in">
-          <Sparkles className="w-4 h-4 text-cyan-neon" />
+          <Sparkles className="w-4 h-4 dark:text-cyan-neon text-cyan-600" />
           <span className="text-sm font-medium dark:text-gray-300 text-gray-600">Available for freelance work</span>
         </div>
 
@@ -54,15 +54,15 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-slide-up" style={{ animationDelay: '0.45s' }}>
           <button
             onClick={() => scrollTo('projects')}
-            className="group relative px-8 py-4 rounded-xl font-semibold text-white dark:text-navy-900 bg-gradient-to-r from-cyan-neon to-accent-purple overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="group relative px-8 py-4 rounded-xl font-semibold text-white bg-gradient-to-r dark:from-cyan-neon from-cyan-600 dark:to-accent-purple to-accent-purple overflow-hidden transition-transform duration-300 hover:scale-105"
           >
             <span className="relative z-10">View Projects</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-cyan-neon opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-accent-purple dark:to-cyan-neon to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           </button>
 
           <button
             onClick={() => scrollTo('contact')}
-            className="px-8 py-4 rounded-xl font-semibold dark:text-white text-navy-900 border dark:border-white/20 border-navy-900/20 dark:hover:border-cyan-neon/50 hover:border-cyan-neon/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:bg-white/5 bg-navy-900/5"
+            className="px-8 py-4 rounded-xl font-semibold dark:text-white text-navy-900 border dark:border-white/20 border-navy-900/20 dark:hover:border-cyan-neon/50 hover:border-cyan-600/50 backdrop-blur-sm transition-all duration-300 hover:scale-105 dark:bg-white/5 bg-navy-900/5"
           >
             Contact Me
           </button>

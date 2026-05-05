@@ -17,7 +17,7 @@ export default function About() {
 
       <div ref={ref} className="relative z-10 max-w-6xl mx-auto px-6">
         <div className={`transition-all duration-700 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <p className="text-sm font-semibold tracking-widest uppercase text-cyan-neon mb-3">About Me</p>
+          <p className="text-sm font-semibold tracking-widest uppercase dark:text-cyan-neon text-cyan-600 mb-3">About Me</p>
           <h2 className="text-3xl sm:text-5xl font-bold dark:text-white text-navy-900 mb-8">
             Crafting Digital{' '}
             <span className="bg-gradient-to-r from-cyan-neon to-accent-purple bg-clip-text text-transparent">
@@ -50,7 +50,7 @@ export default function About() {
                 style={{ transitionDelay: `${300 + i * 150}ms` }}
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-neon/5 to-accent-purple/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <stat.icon className="w-8 h-8 mx-auto mb-3 text-cyan-neon" />
+                <stat.icon className="w-8 h-8 mx-auto mb-3 dark:text-cyan-neon text-cyan-600" />
                 <p className="text-3xl font-bold dark:text-white text-navy-900 mb-1">{stat.value}</p>
                 <p className="text-sm dark:text-gray-400 text-gray-500">{stat.label}</p>
               </div>

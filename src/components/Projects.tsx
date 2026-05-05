@@ -1,6 +1,6 @@
 import { useInView } from '../hooks/useInView';
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 
 const projects = [
   {
@@ -45,6 +45,7 @@ export default function Projects() {
   const { ref, isInView } = useInView();
   const [offset, setOffset] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
 
   const total = projects.length;
 
@@ -53,19 +54,71 @@ export default function Projects() {
       if (isTransitioning) return;
       setIsTransitioning(true);
       setOffset((prev) => (prev + dir + total) % total);
-      setTimeout(() => setIsTransitioning(false), 400);
+      setTimeout(() => setIsTransitioning(false), 500);
     },
     [isTransitioning, total]
   );
 
+  const goTo = useCallback(
+    (index: number) => {
+      if (isTransitioning) return;
+      setIsTransitioning(true);
+      setOffset(index % total);
+      setTimeout(() => setIsTransitioning(false), 500);
+    },
+    [isTransitioning, total]
+  );
+
+  // Scroll-based carousel: one slide per wheel event
   useEffect(() => {
-    const timer = setInterval(() => slide(1), 5000);
-    return () => clearInterval(timer);
+    const section = sectionRef.current;
+    if (!section) return;
+
+    let accumulatedDelta = 0;
+    const THRESHOLD = 50;
+
+    const handleWheel = (e: WheelEvent) => {
+      const rect = section.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!inView) return;
+
+      e.preventDefault();
+      accumulatedDelta += e.deltaY;
+
+      if (Math.abs(accumulatedDelta) >= THRESHOLD) {
+        slide(accumulatedDelta > 0 ? 1 : -1);
+        accumulatedDelta = 0;
+      }
+    };
+
+    section.addEventListener('wheel', handleWheel, { passive: false });
+    return () => section.removeEventListener('wheel', handleWheel);
   }, [slide]);
+
+  // Build visible window based on screen size
+  const getVisibleCount = () => {
+    if (typeof window === 'undefined') return 3;
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+  };
+
+  const [visibleCount, setVisibleCount] = useState(3);
+
+  useEffect(() => {
+    const update = () => {
+      if (window.innerWidth >= 1024) setVisibleCount(3);
+      else if (window.innerWidth >= 768) setVisibleCount(2);
+      else setVisibleCount(1);
+    };
+    update();
+    window.addEventListener('resize', update);
+    return () => window.removeEventListener('resize', update);
+  }, []);
 
   const getVisible = () => {
     const visible = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < visibleCount; i++) {
       visible.push(projects[(offset + i) % total]);
     }
     return visible;
@@ -74,7 +127,7 @@ export default function Projects() {
   const visible = getVisible();
 
   return (
-    <section id="projects" className="relative py-24 sm:py-32 overflow-hidden">
+    <section ref={sectionRef} id="projects" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0 dark:bg-navy-800 bg-gray-50" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] dark:bg-accent-purple/5 bg-accent-purple/10 rounded-full blur-3xl" />
 
@@ -84,7 +137,7 @@ export default function Projects() {
             isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="text-sm font-semibold tracking-widest uppercase text-cyan-neon mb-3">Portfolio</p>
+          <p className="text-sm font-semibold tracking-widest uppercase dark:text-cyan-neon text-cyan-600 mb-3">Portfolio</p>
           <h2 className="text-3xl sm:text-5xl font-bold dark:text-white text-navy-900">
             Featured{' '}
             <span className="bg-gradient-to-r from-cyan-neon to-accent-purple bg-clip-text text-transparent">
@@ -102,19 +155,19 @@ export default function Projects() {
           {/* Nav arrows */}
           <button
             onClick={() => slide(-1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-11 h-11 rounded-xl dark:bg-navy-700/80 bg-white/80 border dark:border-white/10 border-gray-200 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:border-cyan-neon/40 hover:text-cyan-neon transition-all duration-300 shadow-lg"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-20 w-11 h-11 rounded-xl dark:bg-navy-700/80 bg-white/80 border dark:border-white/10 border-gray-200 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:border-cyan-neon/40 dark:hover:text-cyan-neon hover:text-cyan-600 transition-all duration-300 shadow-lg"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={() => slide(1)}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-11 h-11 rounded-xl dark:bg-navy-700/80 bg-white/80 border dark:border-white/10 border-gray-200 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:border-cyan-neon/40 hover:text-cyan-neon transition-all duration-300 shadow-lg"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-20 w-11 h-11 rounded-xl dark:bg-navy-700/80 bg-white/80 border dark:border-white/10 border-gray-200 backdrop-blur-sm flex items-center justify-center dark:text-white text-navy-900 hover:border-cyan-neon/40 dark:hover:text-cyan-neon hover:text-cyan-600 transition-all duration-300 shadow-lg"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
 
-          {/* 3-card track */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 px-8">
+          {/* Card track - responsive grid */}
+          <div className={`grid gap-6 px-8 ${visibleCount === 3 ? 'grid-cols-3' : visibleCount === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
             {visible.map((project, i) => (
               <div
                 key={`${offset}-${i}`}
@@ -150,7 +203,7 @@ export default function Projects() {
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-3 py-1 text-xs font-medium rounded-full dark:bg-cyan-neon/10 bg-cyan-neon/5 text-cyan-neon border dark:border-cyan-neon/20 border-cyan-neon/10"
+                        className="px-3 py-1 text-xs font-medium rounded-full dark:bg-cyan-neon/10 bg-cyan-600/5 dark:text-cyan-neon text-cyan-600 border dark:border-cyan-neon/20 border-cyan-600/10"
                       >
                         {tag}
                       </span>
@@ -166,13 +219,7 @@ export default function Projects() {
             {projects.map((_, i) => (
               <button
                 key={i}
-                onClick={() => {
-                  if (!isTransitioning) {
-                    setIsTransitioning(true);
-                    setOffset(i);
-                    setTimeout(() => setIsTransitioning(false), 400);
-                  }
-                }}
+                onClick={() => goTo(i)}
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === offset
                     ? 'w-8 bg-gradient-to-r from-cyan-neon to-accent-purple'
