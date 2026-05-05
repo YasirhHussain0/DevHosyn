@@ -1,5 +1,4 @@
 {
-  "homepage": "https://YasirhHussain0.github.io/DevHosyn",
   "name": "vite-react-typescript-starter",
   "private": true,
   "version": "0.0.0",
@@ -9,9 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "typecheck": "tsc --noEmit -p tsconfig.app.json",
-    "predeploy": "npm run dist",
-    "deploy": "gh-pages -d dist"
+    "typecheck": "tsc --noEmit -p tsconfig.app.json"
+    
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.57.4",
