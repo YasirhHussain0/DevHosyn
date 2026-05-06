@@ -34,10 +34,10 @@ export default function Contact() {
             </span>
           </h2>
         </div>
-
-        <div className="grid lg:grid-cols-5 gap-12">
+        
+        <div className="grid lg:grid-cols-6 gap-12">
           {/* Contact info */}
-          <div className={`lg:col-span-2 space-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`lg:col-span-3 space-y-6 transition-all duration-700 delay-200 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <p className="text-lg dark:text-gray-300 text-gray-600 leading-relaxed">
               Have a project in mind or want to collaborate? I'd love to hear from you. Let's create something amazing together.
             </p>
@@ -64,9 +64,9 @@ export default function Contact() {
             className={`lg:col-span-3 space-y-5 transition-all duration-700 delay-300 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
+              {/* <label htmlFor="name" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
                 Name
-              </label>
+              </label> */}
               <input
                 id="name"
                 type="text"
@@ -79,9 +79,9 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
+              {/* <label htmlFor="email" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
                 Email
-              </label>
+              </label> */}
               <input
                 id="email"
                 type="email"
@@ -94,9 +94,9 @@ export default function Contact() {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
+              {/* <label htmlFor="message" className="block text-sm font-medium dark:text-gray-300 text-gray-600 mb-2">
                 Message
-              </label>
+              </label> */}
               <textarea
                 id="message"
                 rows={5}

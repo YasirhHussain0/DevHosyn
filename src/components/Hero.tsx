@@ -31,7 +31,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-white/5 bg-navy-900/5 border dark:border-white/10 border-navy-900/10 backdrop-blur-sm mb-8 animate-fade-in">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full dark:bg-white/5 bg-navy-900/5 border dark:border-white/10 border-navy-900/10 backdrop-blur-sm mb-8 animate-slide-up">
           <Sparkles className="w-4 h-4 dark:text-cyan-neon text-cyan-600" />
           <span className="text-sm font-medium dark:text-gray-300 text-gray-600">Available for freelance work</span>
         </div>
