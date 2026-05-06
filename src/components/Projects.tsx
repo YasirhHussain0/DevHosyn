@@ -3,41 +3,78 @@ import { ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState, useCallback } from 'react';
 
 const projects = [
+  // {
+  //   title: 'Nebula Dashboard',
+  //   description: 'Real-time analytics dashboard with interactive data visualizations and dark mode support.',
+  //   tags: ['React', 'D3.js', 'Tailwind'],
+  //   image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+  // {
+  //   title: 'Pulse UI Kit',
+  //   description: 'A comprehensive design system with 50+ components built for modern web applications.',
+  //   tags: ['UI/UX', 'Figma', 'React'],
+  //   image: 'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+  // {
+  //   title: 'Wavelength Music',
+  //   description: 'Music streaming platform with audio visualization and personalized recommendations.',
+  //   tags: ['Next.js', 'WebAudio', 'Animation'],
+  //   image: 'https://images.pexels.com/photos/1190197/pexels-photo-1190197.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+  // {
+  //   title: 'Terraform Studio',
+  //   description: '3D landscape generator with real-time editing and procedural terrain algorithms.',
+  //   tags: ['Three.js', 'WebGL', 'TypeScript'],
+  //   image: 'https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+  // {
+  //   title: 'Cipher Messenger',
+  //   description: 'End-to-end encrypted messaging app with ephemeral messages and voice calls.',
+  //   tags: ['React Native', 'Node.js', 'Crypto'],
+  //   image: 'https://images.pexels.com/photos/6078291/pexels-photo-6078291.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+  // {
+  //   title: 'Aurora Commerce',
+  //   description: 'E-commerce platform with AR product previews and seamless checkout experience.',
+  //   tags: ['Next.js', 'Stripe', 'AR'],
+  //   image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=600',
+  // },
+
   {
-    title: 'Nebula Dashboard',
-    description: 'Real-time analytics dashboard with interactive data visualizations and dark mode support.',
-    tags: ['React', 'D3.js', 'Tailwind'],
-    image: 'https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Charity Donation Platform',
+    description: 'Custom WordPress site with secure donation system, campaign tracking, and Stripe integration.',
+    tags: ['WordPress', 'Donation Form', 'Stripe'],
+    image: 'https://images.pexels.com/photos/6994982/pexels-photo-6994982.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
-    title: 'Pulse UI Kit',
-    description: 'A comprehensive design system with 50+ components built for modern web applications.',
-    tags: ['UI/UX', 'Figma', 'React'],
-    image: 'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=600',
+    title: 'Restaurant Reservation System',
+    description: 'Online booking website with table reservation system and real-time availability management.',
+    tags: ['WordPress', 'Online Booking', 'Elementor'],
+    image: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
-    title: 'Wavelength Music',
-    description: 'Music streaming platform with audio visualization and personalized recommendations.',
-    tags: ['Next.js', 'WebAudio', 'Animation'],
-    image: 'https://images.pexels.com/photos/1190197/pexels-photo-1190197.jpeg?auto=compress&cs=tinysrgb&w=600',
-  },
-  {
-    title: 'Terraform Studio',
-    description: '3D landscape generator with real-time editing and procedural terrain algorithms.',
-    tags: ['Three.js', 'WebGL', 'TypeScript'],
-    image: 'https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg?auto=compress&cs=tinysrgb&w=600',
-  },
-  {
-    title: 'Cipher Messenger',
-    description: 'End-to-end encrypted messaging app with ephemeral messages and voice calls.',
-    tags: ['React Native', 'Node.js', 'Crypto'],
-    image: 'https://images.pexels.com/photos/6078291/pexels-photo-6078291.jpeg?auto=compress&cs=tinysrgb&w=600',
-  },
-  {
-    title: 'Aurora Commerce',
-    description: 'E-commerce platform with AR product previews and seamless checkout experience.',
-    tags: ['Next.js', 'Stripe', 'AR'],
+    title: 'E-commerce Fashion Store',
+    description: 'WooCommerce store with custom product pages and optimized checkout experience.',
+    tags: ['WooCommerce', 'Payment', 'Conversion'],
     image: 'https://images.pexels.com/photos/5632399/pexels-photo-5632399.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Corporate Business Website',
+    description: 'Modern business website built with a custom WordPress theme and flexible CMS structure.',
+    tags: ['WordPress', 'Custom Theme', 'CMS'],
+    image: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Online Course Platform',
+    description: 'Learning platform with course enrollment, payments, and structured content delivery.',
+    tags: ['WordPress', 'LMS', 'WooCommerce'],
+    image: 'https://images.pexels.com/photos/4145191/pexels-photo-4145191.jpeg?auto=compress&cs=tinysrgb&w=600',
+  },
+  {
+    title: 'Event Management Website',
+    description: 'Event platform with booking system, scheduling, and automated email notifications.',
+    tags: ['WordPress', 'Event Booking'],
+    image: 'https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 

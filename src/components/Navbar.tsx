@@ -43,12 +43,12 @@ export default function Navbar() {
               aria-label="Toggle theme"
             >
               <div className="relative w-5 h-5">
-                <Sun
+                <Moon
                   className={`absolute inset-0 h-5 w-5 text-amber-400 transition-all duration-500 ${
                     isDark ? 'rotate-90 scale-0 opacity-0' : 'rotate-0 scale-100 opacity-100'
                   }`}
                 />
-                <Moon
+                <Sun
                   className={`absolute inset-0 h-5 w-5 dark:text-cyan-neon text-cyan-600 transition-all duration-500 ${
                     isDark ? 'rotate-0 scale-100 opacity-100' : '-rotate-90 scale-0 opacity-0'
                   }`}
