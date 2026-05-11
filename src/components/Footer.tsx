@@ -9,7 +9,7 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="relative py-12 overflow-hidden">
-      <div className="absolute inset-0 dark:bg-navy-900 bg-slate-50 border-t dark:border-white/5 border-gray-200" />
+      <div className="absolute inset-0 dark:bg-navy-800 bg-gray-50" />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row items-start justify-between gap-10 mb-10">
@@ -29,7 +29,7 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-9 h-9 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:text-gray-500 hover:border-cyan-neon/30 transition-all duration-300"
+                  className="w-9 h-9 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:text-gray-500 hover:border-gray-300 hover:bg-cyan-neon/30 transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon className="w-4 h-4" />
@@ -39,24 +39,47 @@ export default function Footer() {
           </div>
 
           {/* Right: Contact info + socials */}
-          <div className="flex flex-col items-start sm:items-end gap-6">
+          <div className="flex flex-col items-start gap-6">
             <h4 className="dark:text-gray-300 text-gay-600 font-semibold text-xl"> Contacts</h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:yasirhosyn@gmail.com" className="flex items-center gap-3 dark:text-gray-300 text-gray-600 hover:text-cyan-500 transition-colors">
-                <div className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center">
-                  <Mail className="w-4 h-4 dark:text-cyan-neon text-cyan-600 hover:text-cyan-500" />
+              <a
+                href="mailto:yasirhosyn@gmail.com"
+                className="group flex items-center gap-3 dark:text-gray-300 text-gray-600 transition-colors"
+              >
+                <div
+                  className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center transition-all duration-300 group-hover:bg-cyan-neon/20 group-hover:border-cyan-neon/30"
+                >
+                  <Mail
+                    className="w-4 h-4 dark:text-cyan-neon text-cyan-600 transition-colors duration-300 group-hover:text-cyan-500"
+                  />
                 </div>
-                <span className="text-sm hover:text-cyan-500">yasirhosyn@gmail.com</span>
+
+                <span
+                  className="text-sm transition-colors duration-300 group-hover:text-cyan-500"
+                >
+                  yasirhosyn@gmail.com
+                </span>
               </a>
-              <a href="tel:+15551234567" className="flex items-center gap-3 dark:text-gray-300 text-gray-600 hover:text-cyan-500 transition-colors">
-                <div className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center">
-                  <Phone className="w-4 h-4 dark:text-cyan-neon text-cyan-600 hover:text-cyan-500" />
+              <a
+                href="tel:+15551234567"
+                className="group flex items-center gap-3 dark:text-gray-300 text-gray-600 transition-colors"
+              >
+                <div
+                  className="w-8 h-8 rounded-full dark:bg-white/5 bg-gray-50 border dark:border-white/10 border-gray-200 flex items-center justify-center transition-all duration-300 group-hover:bg-cyan-neon/20 group-hover:border-cyan-neon/30"
+                >
+                  <Phone
+                    className="w-4 h-4 dark:text-cyan-neon text-cyan-600 transition-colors duration-300 group-hover:text-cyan-500" />
                 </div>
-                <span className="text-sm hover:text-cyan-500">+92 (555) 123-4567</span>
+
+                <span
+                  className="text-sm transition-colors duration-300 group-hover:text-cyan-500"
+                >
+                  +92 (555) 123-4567
+                </span>
               </a>
             </div>
 
-            
+
           </div>
         </div>
 
